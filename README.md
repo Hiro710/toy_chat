@@ -57,6 +57,13 @@ GemfileやDockerfileなどを修正した時だけビルドが必要。
 $ docker-compose build
 ```
 
+#### Dockerを起動させずにDockerコマンド打つと以下のエラーを吐く
+
+```
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+**→ Dockerが起動しているか確認すること！**
+
 # 課題
 
 運用サービスどこ使う?
