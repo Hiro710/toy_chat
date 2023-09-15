@@ -65,6 +65,7 @@ $ docker-compose build
 - Netlify
 - Heroku
 - GCP
+- Render
 - etc...
 
 ### 従来の機能
