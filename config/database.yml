@@ -1,0 +1,23 @@
+# PostgreSQL. Versions 9.3 and up are supported.
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: password
+  pool: 5
+
+development:
+  <<: *default
+  database: toy_chat_dk_development
+
+test:
+  <<: *default
+  database: toy_chat_dk_test
+
+production:
+  <<: *default
+  database: toy_chat_dk_production
+  username: toy_chat_dk
+  password: <%= ENV["TOY_CHAT_DK_DATABASE_PASSWORD"] %>
