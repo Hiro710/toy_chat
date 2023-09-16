@@ -48,6 +48,10 @@ $ docker-compose down
 $ docker-compose run web rake db:create
 
 $ docker-compose up
+
+# アプリの開始・停止は以下でも可能(DB立ち上げ済みなのでこっちの方が早い)
+$ docker-compose start
+$ docker-compose stop
 ```
 
 GemfileやDockerfileなどを修正した時だけビルドが必要。
