@@ -7,7 +7,12 @@
 
 使用PCによる環境やツールの差異などによって引き起こされるトラブルを回避する為、Dockerを使用する。
 
-開発環境の共有、アプリケーション実行環境の確保、複数OSでアプリケーションの動作確認、ローカル環境をできるだけ汚さずに済むなど、メリットが得られる為。
+Dockerを使用する理由は以下である
+
+- 開発環境の共有
+- アプリケーション実行環境の確保
+- 複数OSでアプリケーションの動作確認
+- ローカル環境をできるだけ汚さずに済むなど、メリットが得られる為。
 
 ### 必要なツール
 
@@ -16,6 +21,8 @@
 - Docker🐳：[こちら](https://www.docker.com/)から入手
 
 - Docker Compose🐙：Dockerをインストールすると入っている
+
+インストール方法は[Qiita](https://qiita.com/)や[Zenn](https://zenn.dev/)内で検索かけると出てくる。
 
 ### ビルド方法
 
@@ -122,6 +129,8 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 - [docker-composeでよく使うコマンド(Ruby on Rails)](https://qiita.com/LikeGeohotz/items/0e3cd9dfa67d7ff6ff96)
 
 
+- [使えるRSpec入門・その1「RSpecの基本的な構文や便利な機能を理解する」](https://qiita.com/jnchito/items/42193d066bd61c740612)
+
 以下は一部を参考にしたサイト(Dockerの各コマンドの概要など)
 
 - [Docker公式クィックスタート: Compose と Rails](https://docs.docker.jp/compose/rails.html)
@@ -141,4 +150,8 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 
 UXを意識したUIの構築。
 
-テスト、リポジトリへのプッシュ、デプロイなどの自動化。
+テスト、リポジトリへのプッシュ、デプロイなどの自動化。CircleCIやJenkinsの使用を促す。
+
+画面遷移状態図の作成。
+
+モックアップの作成(優先度：中)。
