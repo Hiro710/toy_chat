@@ -7,7 +7,7 @@
 
 使用PCによる環境やツールの差異などによって引き起こされるトラブルを回避する為、Dockerを使用する。
 
-Dockerを使用する理由は以下である
+その他、Dockerを使用する理由は以下である
 
 - 開発環境の共有
 - アプリケーション実行環境の確保
@@ -23,6 +23,8 @@ Dockerを使用する理由は以下である
 - Docker Compose🐙：Dockerをインストールすると入っている
 
 インストール方法は[Qiita](https://qiita.com/)や[Zenn](https://zenn.dev/)内で検索かけると出てくる。
+
+割とPCのスペックやリソースに余裕があればサクサク動作する。
 
 ### ビルド方法
 
@@ -77,7 +79,7 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 
 # 課題
 
-運用サービスどこ使う?
+運用サービスどこ使う? → なるべく低コストで運用したい。
 
 - AWS
 - Netlify
@@ -85,6 +87,8 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 - GCP
 - Render
 - etc...
+
+正式リリースする前にベータ版としてリリースし、テストユーザに利用してもらい、day, week, month単位でアクセス数の計測、それによるリソースの負荷計測などを行う必要がある。
 
 ### 従来の機能
 
@@ -108,7 +112,7 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 
 - 投稿した記事の編集
 
-- 投稿の削除権限を運営(admin)のみに限定 → 誤投稿による再投稿で掲示板が繁雑になるのを避けたい
+- 投稿の削除権限を運営(admin)のみに限定 → 誤投稿による再投稿で掲示板が繁雑になるのを避けたい(可能？)
 
  etc...
 
@@ -155,3 +159,5 @@ UXを意識したUIの構築。
 画面遷移状態図の作成。
 
 モックアップの作成(優先度：中)。
+
+ユーザー登録なしで気軽に使えるかつ、セキュリティ、フールプルーフの最適化。
