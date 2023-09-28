@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-  get 'main_pages/home'
-  root "application#hello"
+  root "main_pages#home"
 end
