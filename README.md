@@ -65,8 +65,10 @@ $ docker-compose stop
 
 GemfileやDockerfileなどを修正した時だけビルドが必要。
 ビルド後、上記コマンド「# DBの作成」から順に実行するとアプリが起動する。
+以下はGemfileの内容変更時の例。
 
 ```
+$ docker-compose run web bundle install
 $ docker-compose build
 ```
 
@@ -100,6 +102,8 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 
 - 検索：キーワード検索のみ対応
 
+- (投稿の削除：管理者のみ削除可能(たぶん))
+
 ### 目標とする機能
 
 - 投稿：モバイル端末からのみ投稿可能 **(※ 議論の余地あり)**
@@ -118,15 +122,15 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 
  etc...
 
-### 仕様
+### 仕様 (バージョン)
 
-* Ruby version : 3.2.2
+* Ruby : 3.2.2
 
-* Rails version : 7.0.8 以上
+* Rails : 7.0.8 以上
 
-* Database(PostgreSQL) : 1.1 以上
+* DB (PostgreSQL) : 1.1 以上
 
-* Docker version：24.0.6
+* Docker：24.0.6
 
 # 参考にしたサイト
 
@@ -148,6 +152,8 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 - [イケてるレポジトリのREADME.mdには何を書くべきか](https://qiita.com/autotaker1984/items/bce70c8c67a8f6fb1b9d)
 
 # その他課題
+
+開発中につまづいた事や忘れがちな事などを[ここ](https://qiita.com/Hiro710/items/cd8c0c7fb1eae4a72ce5)にまとめる。
 
 必要であれば、将来は英語版READMEを追加予定。
 
