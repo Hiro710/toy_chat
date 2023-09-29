@@ -54,6 +54,9 @@ group :development, :test do
 
   # RSpecを追加
   gem "rspec-rails"
+
+  # テスト用モデルデータを作成するためにfactory_botを追加
+  gem "factory_bot_rails"
 end
 
 group :development do
