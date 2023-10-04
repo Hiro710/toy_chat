@@ -1,4 +1,12 @@
-<% provide(:title, @user.name) %>
-<h1>
-  <%= @user.name %>
-</h1>
+<% provide(:title, @message_content.name) %>
+
+<div class="msg-content">
+  <p>名前：<%= @message_content.name %></p>
+  <p>性別：<%= @message_content.sex %></p>
+  <p>気分：<%= @message_content.mood %></p>
+  <p>好きなタイプ：<%= @message_content.person_type %></p>
+  <br/>
+  <p><%= @message_content.content %></p>
+  <br/>
+  <p>投稿日時：<%= @message_content.post_time %></p>
+</div>
