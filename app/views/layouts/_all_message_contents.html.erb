@@ -1,0 +1,10 @@
+<div>
+  <% @message_contents.each do |msg_content| %>
+    <p>名前：<%= msg_content.name %></p>
+    <p>性別：<%= msg_content.sex %></p>
+    <p>気分：<%= msg_content.mood %></p>
+    <p>好きなタイプ：<%= msg_content.person_type %></p>
+    <p><%= msg_content.content %></p>
+    <p>投稿日時：<%= msg_content.post_time %></p>
+  <% end %>
+</div>

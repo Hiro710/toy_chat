@@ -1,0 +1,18 @@
+<h1>new message</h1>
+
+<div class="new_msg_content">
+  <h1>新規投稿</h1>
+  <div class="new_content">
+    <%= form_with(model: @message_content, url: '/message_contents', local: true) do |f| %>
+      <h2>メッセージ入力</h2>
+      <div class="content_field">
+        <%= f.text_area(:message, class: "message") %>
+      </div>
+      <h2>画像アップロード</h2>
+      <div class="content_field">
+        <%= f.file_field(:upload_file) %>
+      </div>
+      <button>登録する</button>
+    <% end %>
+  </div>
+</div>

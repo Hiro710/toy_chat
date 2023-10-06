@@ -5,4 +5,9 @@ class MessageContent < ApplicationRecord
   validates :mood,    presence: true, length: { maximum: 20 }
   validates :person_type,    presence: true, length: { maximum: 10 }
   validates :content, presence: true, length: { maximum: 100 } # 本文は100文字まで入力可
+
+  # 並べ替え：投稿の新着順(desc)・古い順(asc)
+  # 投稿の作成時間を基準にしている
+  scope :latest, -> { order(created_at: :desc) }
+  scope :old, -> { order(created_at: :asc) }
 end

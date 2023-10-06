@@ -11,3 +11,6 @@ MessageContent.create(:name => "ヒゲ男", :sex => "女装", :mood => "お話�
 MessageContent.create(:name => "モン太", :sex => "女装", :mood => "普通", :person_type => "女装", :content => "差し入れ持って行きます。", :post_time => Time.current)
 MessageContent.create(:name => "純男", :sex => "男", :mood => "秘密", :person_type => "秘密", :content => "終電逃したので行きます。", :post_time => Time.current)
 MessageContent.create(:name => "とっちゃん", :sex => "男", :mood => "普通", :person_type => "秘密", :content => "2階は満員御礼。", :post_time => Time.current)
+MessageContent.create(:name => "12345", :sex => "秘密", :mood => "秘密", :person_type => "秘密", :content => "3日連続でいます。", :post_time => Time.current)
+MessageContent.create(:name => "純男2", :sex => "男", :mood => "秘密", :person_type => "秘密", :content => "23時ごろ向かいます。", :post_time => Time.current)
+MessageContent.create(:name => "まぐろ", :sex => "男", :mood => "普通", :person_type => "秘密", :content => "お刺身持っていきます。", :post_time => Time.current)
