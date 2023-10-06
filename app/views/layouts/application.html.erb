@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <!--flashメッセージ-->
+    <div class="flash-success">
+      <%= flash[:notice] %>
+    </div>
+    <div class="flash-danger">
+      <%= flash.now[:alert] %>
+    </div>
     <!--headerのパーシャルを追加する-->
     <%= render 'layouts/header' %>
     <%= yield %>

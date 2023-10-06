@@ -18,6 +18,16 @@ class MessageContentsController < ApplicationController
   end
 
   def create
+    @message_content = MessageContent.new(message_content_params)
+    # 投稿に成功：一覧へリダイレクト、投稿失敗：新規投稿へリダイレクト
+    if @message_content.save
+      flash[:notice] = "投稿完了"
+      redirect_to root_path
+    else
+      flash.now[:alert] = "投稿に失敗しました"
+      @message_contents = MessageContent.all
+      redirect_to new_message_content_path
+    end
   end
 
   # 投稿内容の詳細
@@ -32,5 +42,12 @@ class MessageContentsController < ApplicationController
   end
 
   def destroy
+  end
+
+
+  private
+
+  def message_content_params
+    params.require(:message_content).permit(:name, :sex, :mood, :person_type, :content)
   end
 end

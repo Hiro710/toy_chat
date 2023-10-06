@@ -1,18 +1,36 @@
-<h1>new message</h1>
-
+<!--新規投稿-->
 <div class="new_msg_content">
+  <div>
+    <%= link_to "投稿一覧", message_contents_path %>
+  </div>
+
   <h1>新規投稿</h1>
   <div class="new_content">
     <%= form_with(model: @message_content, url: '/message_contents', local: true) do |f| %>
-      <h2>メッセージ入力</h2>
       <div class="content_field">
-        <%= f.text_area(:message, class: "message") %>
+        <%= f.label :name, "名前" %>
+        <%= f.text_field :name %>
       </div>
-      <h2>画像アップロード</h2>
       <div class="content_field">
-        <%= f.file_field(:upload_file) %>
+        <%= f.label :sex, "性別" %>
+        <%= f.text_field :sex %>
       </div>
-      <button>登録する</button>
+      <div class="content_field">
+        <%= f.label :mood, "気分" %>
+        <%= f.text_field :mood %>
+      </div>
+      <div class="content_field">
+        <%= f.label :person_type, "好きなタイプ" %>
+        <%= f.text_field :person_type %>
+      </div>
+      <div class="content_field">
+        <%= f.label :content, "本文" %>
+        <%= f.text_area :content, rows: 5 %>
+      </div>
+
+      <div>
+        <%= f.submit "投稿する" %>
+      </div>
     <% end %>
   </div>
 </div>
