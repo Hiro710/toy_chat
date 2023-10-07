@@ -92,6 +92,8 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 
 正式リリースする前にベータ版としてリリースし、テストユーザに利用してもらい、day, week, month単位でアクセス数の計測、それによるリソースの負荷計測などを行う必要がある。
 
+CSSフレームワークはBootStrapが有名だが、軽量でレスポンシブにも対応したBULMAを採用する。
+
 ### 従来の機能
 
 以下の3つ
