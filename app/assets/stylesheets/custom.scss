@@ -1,0 +1,44 @@
+@import "bulma";
+
+html {
+  box-sizing: border-box;
+}
+
+/* header */
+header {
+  width: 100%;
+  margin: 5 0%;
+  display: flex;
+}
+
+.order_btns {
+  display: flex;
+  margin-left: 2%;
+}
+
+.user_action_btns {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2%;
+}
+
+.new_post {
+  margin-left: 1%;
+}
+
+.input_field {
+  margin: 1%;
+}
+
+.input_textarea {
+  margin: 2% 1%;
+}
+
+.submit_btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2%;
+}
+
+
+// @media screen and (max-width: 640px) {/* 640px以下でスマホ画面時*/

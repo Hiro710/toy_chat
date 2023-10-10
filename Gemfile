@@ -77,3 +77,5 @@ group :test do
 end
 
 gem 'rails-i18n', '~> 7.0.0'
+
+gem "bulma-rails"
