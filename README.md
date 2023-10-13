@@ -16,17 +16,21 @@
 
 ### 必要なツール
 
-- Git：[こちら](https://git-scm.com/)から入手
-
 - Docker🐳：[こちら](https://www.docker.com/)から入手
 
 - Docker Compose🐙：Dockerをインストールすると入っている
+
+- Git：[こちら](https://git-scm.com/)から入手(開発に関わりたい人のみ必要)
+
+基本ローカル環境で動かすのに必要なツールはDockerのみである。
+
+アプリのリソースをzip形式でダウンロード・解凍し、Dockerをインストール・起動すれば動かすことが可能。
 
 インストール方法は[Qiita](https://qiita.com/)や[Zenn](https://zenn.dev/)内で検索かけると出てくる。
 
 PCのスペックやリソースに余裕があればサクサク動作する。
 
-### ビルド方法
+### 起動(ビルド)方法
 
 必要なツールのインストールが完了したら、デスクトップなど任意の場所で以下を順に実行。
 
@@ -185,3 +189,5 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 - day, week, month単位でアクセス数の計測、それによるリソースの負荷計測。(余力があれば実行。まずはリリースまでを目標に進める。)
 
 - レイアウトをソレっぽい感じにしたい(軽量CSSフレームワークBULMA使ってみる)
+
+- 余裕があれば24時間以内の投稿のみに色付け表示させる機能を追加する
