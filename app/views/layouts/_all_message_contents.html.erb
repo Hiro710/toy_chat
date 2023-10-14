@@ -1,10 +1,23 @@
-<div>
+
   <% @message_contents.each do |msg_content| %>
+  <div class="box is-responsive msg_content">
+    <div class="content">
+
     <p>名前：<%= msg_content.name %></p>
     <p>性別：<%= msg_content.sex %></p>
     <p>気分：<%= msg_content.mood %></p>
     <p>好きなタイプ：<%= msg_content.person_type %></p>
-    <p>【メッセージ】<%= msg_content.content %></p>
-    <p>投稿日時：<%= msg_content.created_at %></p>
+    <br />
+    <p>【メッセージ】<br /><%= msg_content.content %></p>
+    <br />
+    <p>投稿日時：<%= l msg_content.created_at %></p>
+    <p>更新日時：<%= l msg_content.updated_at %></p>
+
+    <div class="link_to_show_btn">
+      <%= link_to "詳細", msg_content, class: "button is-link"%>
+    </div>
+
+  </div>
+  </div>
   <% end %>
-</div>
+

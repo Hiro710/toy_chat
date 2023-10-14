@@ -13,6 +13,7 @@ class MessageContentsController < ApplicationController
     end
   end
 
+  # 投稿用フォームの雛形生成
   def new
     @message_content = MessageContent.new
 =begin
@@ -34,16 +35,17 @@ class MessageContentsController < ApplicationController
                              "ドS", "ドM", "小柄な人", "イケメン", "おじさん", "お兄さん", "H好きな人", "スリム体型", "特になし", "H上手な人"]
   end
 
+  # 新規投稿
   def create
     @message_content = MessageContent.new(message_content_params)
     # 投稿に成功：一覧へリダイレクト、投稿失敗：新規投稿へリダイレクト
     if @message_content.save
       flash[:notice] = "投稿完了"
-      redirect_to root_path
+      redirect_to @message_content
     else
       flash.now[:alert] = "投稿に失敗しました"
       @message_contents = MessageContent.all
-      redirect_to new_message_content_path
+      render new_message_content_path
     end
   end
 
@@ -52,15 +54,37 @@ class MessageContentsController < ApplicationController
     @message_content = MessageContent.find(params[:id])
   end
 
+  # 投稿内容の編集
   def edit
+    @message_content = MessageContent.find(params[:id])
+
+    # Viewの方でselectメソッドを使ってプルダウンメニューを表示させる
+    @category_sex = ["選択して下さい", "おじさん", "紳士", "青年", "男", "Hな男性", "女装", "Hな女装", "男の娘", "NH", "レイヤー",
+                     "熟女装", "メス豚", "秘密"]
+
+    @category_mood = ["選択して下さい", "秘密", "普通", "Hしたい!", "妊娠中", "疲れ気味", "お話したい♪", "ブルーなの..", "口説いて♪",
+                      "パートナー募集中", "ドキドキ", "ハラハラ", "初めてです", "発情期♪", "生理中", "声かけて", "いじめて♪", "内気です",
+                      "仲良くなりたい", "良い方がいれば♪"]
+
+    @category_person_type = ["選択して下さい", "男性", "女性", "女装", "変態", "皆大好き", "可愛い娘", "ガチムチ", "優しい人", "長身な人",
+                             "ドS", "ドM", "小柄な人", "イケメン", "おじさん", "お兄さん", "H好きな人", "スリム体型", "特になし", "H上手な人"]
   end
 
+  # 投稿内容の編集をデータベースへ保存して更新
   def update
+    @message_content = MessageContent.find(params[:id])
+    if @message_content.update(message_content_params)
+      flash[:notice] = "投稿内容を更新しました"
+      redirect_to message_contents_path
+    else
+      # render :new
+      redirect_to message_contents_path
+    end
   end
 
-  def destroy
+  # TOYBOXへ初来店者向けページ
+  def explanation
   end
-
 
   private
 

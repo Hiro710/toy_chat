@@ -11,34 +11,79 @@ header {
   display: flex;
 }
 
-.order_btns {
-  display: flex;
-  margin-left: 2%;
+.header_menu_order_btns {
+  justify-content: space-around;
+  margin: 5px;
 }
 
-.user_action_btns {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 2%;
-}
-
+/* newビュー全体(h1タイトルより下)のレイアウト */
 .new_post {
-  margin-left: 1%;
+  margin: 10%;
 }
 
+/* newビューの入力各項目のdivタグ */
 .input_field {
-  margin: 1%;
+  margin: 2%;
 }
 
+/* newビューの入力欄(性別・気分・好きなタイプ)の位置 */
+.new_input_name {
+  max-width: 125px;
+  margin-left: 91px;
+}
+
+.new_input_sex {
+  margin-left: 92px;
+}
+
+.new_input_mood {
+  margin-left: 80.5px;
+}
+
+.new_input_person_type {
+  margin-left: 29px;
+}
+
+/* newビューのメッセージ欄全体 */
 .input_textarea {
+  margin-top: 30px;
   margin: 2% 1%;
+
+  /* newビューのメッセージ入力欄 */
+  .new_input_textarea {
+    margin-top: 1%;
+    margin: 5 50%;
+  }
 }
 
+/* newビューのメッセージ欄全体 */
+.input_textarea {
+  margin-top: 40px;
+}
+
+/* newビューの投稿ボタン */
 .submit_btn {
   display: flex;
   justify-content: flex-end;
-  margin-right: 2%;
+  margin-right: 3%;
 }
 
+/* _all_message_contents.html.erbの「詳細」ボタン */
+.link_to_show_btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* show.html.erbの「編集」ボタン */
+.link_to_edit_btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2%;
+}
+
+/* _all_message_contents.html.erbの一覧表示部分 */
+.msg_content {
+  content: flex;
+}
 
 // @media screen and (max-width: 640px) {/* 640px以下でスマホ画面時*/

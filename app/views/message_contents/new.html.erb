@@ -1,19 +1,19 @@
 <!--新規投稿-->
-<div class="new_msg_content">
-  <button class="button is-link is-outlined">
-     <%= link_to "投稿一覧", message_contents_path %>
-  </button>
+<div class="new_post">
 
   <h1 class="title">新規投稿</h1>
 
-  <div class="box new_post">
+  <div>
     <%= form_with(model: @message_content, url: message_contents_path, local: true) do |f| %>
+
+      <!--名前-->
       <div class="input_field">
         <%= f.label :name, "名前" %>：
-        <%= f.text_field :name %>
-        <b>（20文字まで）</b>
+        <%= f.text_field :name, class: "input is-small new_input_name" %>
+        <b>※ 20文字まで</b>
       </div>
 
+      <!--性別-->
       <div class="input_field">
         <%= f.label :sex, "性別" %>：
         <!-- <%=
@@ -22,20 +22,26 @@
             options_for_select([["選択して下さい", "　"], ["おじさん", "おじさん"], ["紳士", "紳士"], ["青年", "青年"], ["男", "男"], ["Hな男性", "Hな男性"], ["女装", "女装"], ["Hな女装", 7], ["男の娘", 8], ["NH", 9], ["レイヤー", 10], ["熟女装", 11], ["メス豚", 12], ["秘密", 13]],
             { selected: 0 }), class: "select is-small"
         %> -->
+        <div class="select is-small">
         <%=
           # selectメソッドを使ってプルダウンメニュー作成
-          f.select :sex, @category_sex, {}, {class: "select is-small", id: "category_sex"}
+          f.select :sex, @category_sex, {}, {class: "new_input_sex", id: "category_sex"}
         %>
+        </div>
       </div>
 
+      <!--気分-->
       <div class="input_field">
         <%= f.label :mood, "気分" %>：
+        <div class="select is-small ">
         <%=
           # selectメソッドを使ってプルダウンメニュー作成
-          f.select :mood, @category_mood, {}, {class: "select is-small", id: "category_mood"}
+          f.select :mood, @category_mood, {}, {class: "select is-small new_input_mood", id: "category_mood"}
         %>
+        </div>
       </div>
 
+      <!--好きなタイプ-->
       <div class="input_field">
         <%= f.label :person_type, "好きなタイプ" %>：
         <!-- <%= f.select :person_type,
@@ -45,19 +51,22 @@
              ["H好きな人", 16], ["スリム体型", 17], ["特になし", 18], ["H上手な人", 19]],
             { selected: 0 }, class: "select is-small"
         %> -->
+        <div class="select is-small">
         <%=
           # selectメソッドを使ってプルダウンメニュー作成
-          f.select :person_type, @category_person_type, {}, {class: "select is-small", id: "category_person_type"}
+          f.select :person_type, @category_person_type, {}, {class: "select is-small new_input_person_type", id: "category_person_type"}
         %>
+        </div>
       </div>
 
+      <!--メッセージ-->
       <div class="input_textarea">
-        <%= f.label :content, "本文" %><b>（100文字まで）</b>
-        <%= f.text_area :content, rows: 5, class: "textarea"%>
+        <%= f.label :content, "【メッセージ】" %><b>※ 100文字まで</b>
+        <%= f.text_area :content, rows: 5, class: "textarea new_input_textarea", placeholder: "Hello, TOYBOX!" %>
       </div>
 
       <div class="submit_btn">
-        <%= f.submit "投稿する", class: "button is-info" %>
+        <%= f.submit "投稿", class: "button is-info" %>
       </div>
     <% end %>
   </div>

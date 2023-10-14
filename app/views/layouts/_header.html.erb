@@ -6,26 +6,38 @@
   </div>
 </header>
 
+<section class="section">
+  <h1 class="title">TOYBOX 来店掲示板</h1>
+  <h3 class="subtitle">【重要事項】<br / >
+    来店告知以外の書き込み(ご意見・ご感想も含む)は雑談掲示板にお願い致します。皆様のご協力をお願い致します🙏
+  </h3>
+</section>
 
-<h1 class="title">TOYBOX 来店掲示板</h1>
-<h3 class="subtitle">【重要事項】<br / >
-  来店告知以外の書き込み(ご意見・ご感想も含む)は雑談掲示板にお願い致します。皆様のご協力をお願い致します🙏
-</h3>
+<!--
+<div>
+  <%= form_with url: message_contents_path, method: :get, local: true do |f| %>
+   <%= f.text_field :search, class: "input is-rounded header_menu_order_btns", type: "text", placeholder: "キーワードを入力して下さい"%>
+   <%= f.submit "検索", name: nil %>
+  <% end %>
+</div>
+-->
 
 <div class="buttons">
-  <button class="button is-responsive">
-    <%= link_to "新着順", message_contents_path(latest: "true"), class: "order_btns" %>
-  </button>
-  <button class="button is-responsive">
-    <%= link_to "古い順", message_contents_path(old: "true"), class: "order_btns" %>
-  </button>
+  <div>
+    <%= link_to "投稿一覧", message_contents_path,  class: "button is-responsive header_menu_order_btns"%>
+  </div>
 
-  <button class="button is-primary is-outlined is-responsive">
-    <%= link_to "投稿", new_message_content_path, class: "user_action_btns" %>
-  </button>
-  <button class="button is-link is-outlined is-responsive">
-    <%= link_to "検索", '#', class: "user_action_btns" %>
-  </button>
+  <div>
+    <%= link_to "新着順", message_contents_path(latest: "true"), class: "button is-responsive header_menu_order_btns" %>
+  </div>
+
+  <div>
+    <%= link_to "古い順", message_contents_path(old: "true"), class: "button is-responsive header_menu_order_btns" %>
+  </div>
+
+  <div>
+    <%= link_to "投稿する", new_message_content_path, class: "button is-primary is-responsive header_menu_order_btns" %>
+  </div>
 </div>
 
 
