@@ -82,12 +82,13 @@ class MessageContentsController < ApplicationController
     end
   end
 
-  # TOYBOXへ初来店者向けページ
+  # TOYBOXへ初来店者向け静的ページ
   def explanation
   end
 
   private
 
+  # ストロングパラメータ(指定したカラムのデータしか受け付けないようにする処理)
   def message_content_params
     params.require(:message_content).permit(:name, :sex, :mood, :person_type, :content)
   end
