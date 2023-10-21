@@ -11,9 +11,14 @@ header {
   display: flex;
 }
 
-.header_menu_order_btns {
-  justify-content: space-around;
-  margin: 5px;
+/* headerの各ボタン */
+.header_btns_parent {
+  display: flex;
+  margin-left: 2.5%;
+
+  .header_btns_child {
+    margin-right: 10px;
+  }
 }
 
 /* newビュー全体(h1タイトルより下)のレイアウト */
@@ -66,6 +71,9 @@ header {
   display: flex;
   justify-content: flex-end;
   margin-right: 3%;
+  .back_btn {
+    margin-right: 10px;
+  }
 }
 
 /* _all_message_contents.html.erbの「詳細」ボタン */

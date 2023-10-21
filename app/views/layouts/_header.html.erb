@@ -3,13 +3,15 @@
   <div class="container">
     <%= link_to  "TOYBOX", "https://nagoyatoybox2.x.2nt.com/index2.html", target: :_blank, rel: "noopener noreferrer" %>
     <%= link_to "Admin", '#' %>
+    <%= link_to "初めての方へ", explanation_path %>
   </div>
 </header>
 
 <section class="section">
   <h1 class="title">TOYBOX 来店掲示板</h1>
   <h3 class="subtitle">【重要事項】<br / >
-    来店告知以外の書き込み(ご意見・ご感想も含む)は雑談掲示板にお願い致します。皆様のご協力をお願い致します🙏
+    来店告知以外の書き込み(ご意見・ご感想も含む)は雑談掲示板にお願い致します。皆様のご協力をお願い致します🙏<br / >
+    初めて来店される方は事前に上部リンク「初めての方へ」を事前にご覧下さい🔰
   </h3>
 </section>
 
@@ -22,21 +24,21 @@
 </div>
 -->
 
-<div class="buttons">
+<div class="buttons header_btns_parent">
   <div>
-    <%= link_to "投稿一覧", message_contents_path,  class: "button is-responsive header_menu_order_btns"%>
+    <%= link_to "投稿一覧", message_contents_path,  class: "button header_btns_child"%>
   </div>
 
   <div>
-    <%= link_to "新着順", message_contents_path(latest: "true"), class: "button is-responsive header_menu_order_btns" %>
+    <%= link_to "新着順", message_contents_path(latest: "true"), class: "button header_btns_child" %>
   </div>
 
   <div>
-    <%= link_to "古い順", message_contents_path(old: "true"), class: "button is-responsive header_menu_order_btns" %>
+    <%= link_to "古い順", message_contents_path(old: "true"), class: "button header_btns_child" %>
   </div>
 
   <div>
-    <%= link_to "投稿する", new_message_content_path, class: "button is-primary is-responsive header_menu_order_btns" %>
+    <%= link_to "投稿する", new_message_content_path, class: "button is-info header_btns_child" %>
   </div>
 </div>
 
