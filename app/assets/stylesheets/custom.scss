@@ -42,7 +42,7 @@ header {
 }
 
 .new_input_mood {
-  margin-left: 80.5px;
+  margin-left: 91.5px;
 }
 
 .new_input_person_type {
@@ -92,6 +92,46 @@ header {
 /* _all_message_contents.html.erbの一覧表示部分 */
 .msg_content {
   content: flex;
+  margin: 0 10%;
+  // 以下はロック要素で囲まれてる枠を、テキストがはみ出して表示されてしまう現象への対処法
+  word-break: break-all;
+}
+
+/* explanation.html.erbの本文レイアウト */
+.hero_layout {
+  margin-bottom: 30px;
+}
+
+.exp_layout {
+  margin: 0 5%;
+  // 機種依存による絵文字がきちんと表示されるようにした
+  h3, div, p {
+    font-family: apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol;
+  }
+  .attend_please {
+    color: red;
+    line-height: 2rem;
+  }
+}
+
+/* explanation.html.erbのgoogle mapのレイアウトをレスポンシブ化 */
+.gmap {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; // アスペクト比16:9 (9/16*100 = 56.25)
+  position: relative;
+  iframe {
+    position: absolute;
+    left: 0; // 位置の基準を左上にする
+    top: 0;  // 位置の基準を左上にする
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* new.html.erbの入力必須項目の明示 */
+.required_input {
+  color: red;
 }
 
 // @media screen and (max-width: 640px) {/* 640px以下でスマホ画面時*/

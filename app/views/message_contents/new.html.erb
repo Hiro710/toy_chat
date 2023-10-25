@@ -6,11 +6,12 @@
   <div>
     <%= form_with(model: @message_content, url: message_contents_path, local: true) do |f| %>
 
+      <b class = "required_input">＊：必須項目</b>
       <!--名前-->
       <div class="input_field">
         <%= f.label :name, "名前" %>：
-        <%= f.text_field :name, class: "input is-small new_input_name" %>
-        <b>※ 20文字まで</b>
+        <%= f.text_field :name, class: "input is-small new_input_name", placeholder: "名無しさん" %>
+        <b class = "required_input">＊（20文字まで）</b>
       </div>
 
       <!--性別-->
@@ -25,15 +26,16 @@
         <div class="select is-small">
         <%=
           # selectメソッドを使ってプルダウンメニュー作成
-          f.select :sex, @category_sex, {}, {class: "new_input_sex", id: "category_sex"}
+          f.select :sex, @category_sex, {}, class: "new_input_sex", id: "category_sex"
         %>
         </div>
+        <b class = "required_input">＊</b>
       </div>
 
       <!--気分-->
       <div class="input_field">
         <%= f.label :mood, "気分" %>：
-        <div class="select is-small ">
+        <div class="select is-small">
         <%=
           # selectメソッドを使ってプルダウンメニュー作成
           f.select :mood, @category_mood, {}, {class: "select is-small new_input_mood", id: "category_mood"}
@@ -61,7 +63,7 @@
 
       <!--メッセージ-->
       <div class="input_textarea">
-        <%= f.label :content, "【メッセージ】" %><b>※ 100文字まで</b>
+        <%= f.label :content, "【メッセージ】" %><b class = "required_input">＊（100文字まで）</b>
         <%= f.text_area :content, rows: 5, class: "textarea new_input_textarea", placeholder: "Hello, TOYBOX!" %>
       </div>
 

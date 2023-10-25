@@ -2,7 +2,7 @@ class MessageContent < ApplicationRecord
   # name, sex, mood, person_type, content属性の検証：各指定文字数未満であること
   # name, sex, contentが空でない事(presence: true)
   validates :name,    presence: true, length: { maximum: 20 }
-  validates :sex,     presence: true, length: { maximum: 10 }
+  validates :sex,     presence: true
   validates :mood,    length: { maximum: 10 }
   validates :person_type,   length: { maximum: 10 }
   validates :content, presence: true, length: { maximum: 100 } # 本文は100文字まで入力可
