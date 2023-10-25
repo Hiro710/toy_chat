@@ -1,27 +1,22 @@
 <% provide(:title, @message_content.name) %>
 <div class="tile is-ancestor">
   <div class="tile is-vertical is-parent">
-  <div class="tile is-child box">
+    <div class="tile is-child box">
 
-<div class="msg-content">
-  <p>名前：<%= @message_content.name %></p>
-  <p>性別：<%= @message_content.sex %></p>
-  <p>気分：<%= @message_content.mood %></p>
-  <p>好きなタイプ：<%= @message_content.person_type %></p>
-  <p>【メッセージ】<br /><%= @message_content.content %></p>
-  <p>投稿日時：<%= l @message_content.created_at %></p>
-  <p>更新日時：<%= l @message_content.updated_at %></p>
+      <div class="msg-content">
+        <p>名前：<%= @message_content.name %></p>
+        <p>性別：<%= @message_content.sex %></p>
+        <p>気分：<%= @message_content.mood %></p>
+        <p>好きなタイプ：<%= @message_content.person_type %></p>
+        <p>【メッセージ】<br /><%= @message_content.content %></p>
+        <p>投稿日時：<%= l @message_content.created_at %></p>
+        <p>更新日時：<%= l @message_content.updated_at %></p>
+      </div>
+
+      <div class="link_to_edit_btn">
+        <%= link_to "編集", edit_message_content_path(@message_content.id), class: "button is-info" %><br />
+      </div>
+
+    </div>
+  </div>
 </div>
-
-<div class="link_to_edit_btn">
-  <%= link_to "編集", edit_message_content_path(@message_content.id), class: "button is-info" %><br />
-</div>
-
-</div>
-</div>
-</div>
-
-
-
-
-
