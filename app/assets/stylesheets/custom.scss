@@ -2,6 +2,9 @@
 
 html {
   box-sizing: border-box;
+
+  //デバッグ用に色付け (あとで消す予定)
+  background-color:gainsboro;
 }
 
 /* header */
@@ -9,6 +12,13 @@ header {
   width: 100%;
   margin: 5 0%;
   display: flex;
+}
+
+/* headerの「重要事項」 */
+.attention_please {
+  color: red;
+  line-height: 2rem;
+  font-weight:bold;
 }
 
 /* headerの各ボタン */
@@ -82,11 +92,26 @@ header {
   justify-content: flex-end;
 }
 
+
+.show_content {
+  content: flex;
+  margin: 0 10%;
+  // 以下はロック要素で囲まれてる枠を、テキストがはみ出して表示されてしまう現象への対処法
+  word-break: break-all;
+}
+
 /* show.html.erbの「編集」ボタン */
 .link_to_edit_btn {
   display: flex;
   justify-content: flex-end;
   margin: 2%;
+}
+
+/* edit.html.erbのタイトル部分 */
+.title_bold {
+  display: flex;
+  margin-left: 2%;
+  font-weight: bold;
 }
 
 /* _all_message_contents.html.erbの一覧表示部分 */
@@ -108,7 +133,7 @@ header {
   h3, div, p {
     font-family: apple color emoji,segoe ui emoji,noto color emoji,android emoji,emojisymbols,emojione mozilla,twemoji mozilla,segoe ui symbol;
   }
-  .attend_please {
+  .attention_please {
     color: red;
     line-height: 2rem;
   }
