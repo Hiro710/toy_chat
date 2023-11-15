@@ -6,3 +6,4 @@ ADD Gemfile /toy_chat_dk/Gemfile
 ADD Gemfile.lock /toy_chat_dk/Gemfile.lock
 RUN bundle install
 ADD . /toy_chat_dk
+CMD bundle exec rails s -p 3000 -b '0.0.0.0'
