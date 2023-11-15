@@ -18,6 +18,6 @@ test:
 
 production:
   <<: *default
-  database: toy_chat_dk_production
-  username: toy_chat_dk
-  password: <%= ENV["TOY_CHAT_DK_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

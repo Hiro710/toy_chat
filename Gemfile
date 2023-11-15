@@ -9,9 +9,6 @@ gem "rails", "~> 7.0.8"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -57,6 +54,9 @@ group :development, :test do
 
   # テスト用モデルデータを作成するためにfactory_botを追加
   gem "factory_bot_rails"
+
+  # Use postgresql as the database for Active Record
+  gem "pg", "~> 1.1"
 end
 
 group :development do
@@ -79,3 +79,7 @@ end
 gem 'rails-i18n', '~> 7.0.0'
 
 gem "bulma-rails"
+
+group :production do
+  gem "pg", "~> 1.1"
+end
