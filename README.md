@@ -6,6 +6,8 @@
 
 開発中につまづいた事や忘れがちな事などを[ここ](https://qiita.com/Hiro710/items/cd8c0c7fb1eae4a72ce5)にまとめる。
 
+お店の運営者からの要望あり。(詳細は最下部)
+
 # Getting Started
 
 使用PCによる環境やツールの差異などによって引き起こされるトラブルを回避する為、Dockerを使用する。
@@ -95,7 +97,7 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 - Netlify
 - Heroku
 - GCP
-- Render
+- Render → デバッグ・テストで使用
 - etc...
 
 正式リリースする前にベータ版としてリリースし、テストユーザに利用してもらい、day, week, month単位でアクセス数の計測、それによるリソースの負荷計測などを行う必要がある。
