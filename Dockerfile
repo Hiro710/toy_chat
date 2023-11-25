@@ -1,5 +1,5 @@
 FROM ruby:3.2.2
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs postgresql-client
 RUN mkdir /toy_chat_dk
 WORKDIR /toy_chat_dk
 ADD Gemfile /toy_chat_dk/Gemfile
