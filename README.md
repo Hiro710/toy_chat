@@ -4,7 +4,7 @@
 
 開発タスク・メモはGithubの[Wiki](https://github.com/Hiro710/toy_chat/wiki)参照。
 
-現在開発中。
+ぼちぼち開発中。
 
 # Getting Started
 
@@ -19,6 +19,8 @@
 
 ### 必要なツール
 
+ローカル環境で動作させる場合
+
 - Docker🐳：[こちら](https://www.docker.com/)から入手
 
 - Docker Compose🐙：Dockerをインストールすると入っている
@@ -27,7 +29,7 @@
 
 基本ローカル環境で動かすのに必要なツールはDockerのみである。
 
-アプリのリソースをzip形式でダウンロード・解凍し、Dockerをインストール・起動すれば動かすことが可能。
+アプリのリソースをgit cloneするかzip形式でダウンロード・解凍し、Dockerをインストール・起動すれば動かすことが可能。
 
 インストール方法は[Qiita](https://qiita.com/)や[Zenn](https://zenn.dev/)内で検索かけると出てくる。
 
