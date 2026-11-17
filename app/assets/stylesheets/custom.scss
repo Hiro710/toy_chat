@@ -1,16 +1,15 @@
-@import "bulma";
+@use "bulma";
 
 html {
   box-sizing: border-box;
-
-  //デバッグ用に色付け (あとで消す予定)
-  background-color:bisque;
+  color-scheme: light;
+  background-color: #ffffff;
 }
 
 /* header */
 header {
   width: 100%;
-  margin: 5 0%;
+  margin: 5% 0;
   display: flex;
 }
 
@@ -61,19 +60,12 @@ header {
 
 /* newビューのメッセージ欄全体 */
 .input_textarea {
-  margin-top: 30px;
-  margin: 2% 1%;
+  margin: 40px 1% 2%;
 
   /* newビューのメッセージ入力欄 */
   .new_input_textarea {
-    margin-top: 1%;
-    margin: 5 50%;
+    margin: 1% 0;
   }
-}
-
-/* newビューのメッセージ欄全体 */
-.input_textarea {
-  margin-top: 40px;
 }
 
 /* newビューの投稿ボタン */
@@ -88,13 +80,11 @@ header {
 
 /* _all_message_contents.html.erbの「詳細」ボタン */
 .link_to_show_btn {
-  display: flex;
-  justify-content: flex-end;
+  padding-right: 5px;
 }
 
 
 .show_content {
-  content: flex;
   margin: 0 10%;
   // 以下はロック要素で囲まれてる枠を、テキストがはみ出して表示されてしまう現象への対処法
   word-break: break-all;
@@ -104,7 +94,7 @@ header {
 .link_to_edit_btn {
   display: flex;
   justify-content: flex-end;
-  margin: 2%;
+  padding-right: 5px;
 }
 
 /* edit.html.erbのタイトル部分 */
@@ -116,10 +106,19 @@ header {
 
 /* _all_message_contents.html.erbの一覧表示部分 */
 .msg_content {
-  content: flex;
   margin: 0 10%;
-  // 以下はロック要素で囲まれてる枠を、テキストがはみ出して表示されてしまう現象への対処法
   word-break: break-all;
+}
+
+/* _all_message_contents.html.erbの最終行（更新日時＋詳細ボタン） */
+.msg_bottom_row {
+  display: flex;
+  align-items: center;
+
+  p {
+    flex: 1;
+    margin-bottom: 0;
+  }
 }
 
 /* explanation.html.erbの本文レイアウト */
@@ -157,6 +156,39 @@ header {
 /* new.html.erbの入力必須項目の明示 */
 .required_input {
   color: red;
+}
+
+/* フラッシュメッセージ */
+.flash-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 1rem;
+  border-radius: 4px;
+
+  &:empty { display: none; }
+}
+
+.flash-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 1rem;
+  border-radius: 4px;
+
+  &:empty { display: none; }
+}
+
+/* キーボード操作のフォーカス表示 */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #3273dc;
+  outline-offset: 2px;
 }
 
 // @media screen and (max-width: 640px) {/* 640px以下でスマホ画面時*/

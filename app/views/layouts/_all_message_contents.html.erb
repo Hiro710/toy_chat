@@ -9,10 +9,11 @@
       <p>好きなタイプ：<%= msg_content.person_type %></p>
       <p>【メッセージ】<br /><%= msg_content.content %></p>
       <p>投稿：<%= l msg_content.created_at %></p>
-      <p>更新：<%= l msg_content.updated_at %></p>
-
-      <div class="link_to_show_btn">
-        <%= link_to "詳細", msg_content, class: "button is-link"%>
+      <div class="msg_bottom_row">
+        <p>更新：<%= l msg_content.updated_at %></p>
+        <div class="link_to_show_btn">
+          <%= link_to "詳細", msg_content, class: "button is-link"%>
+        </div>
       </div>
 
     </div>

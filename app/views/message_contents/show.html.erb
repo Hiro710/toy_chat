@@ -2,18 +2,16 @@
 <div class="box is-responsive show_content">
   <div class="content">
 
-      <div class="msg-content">
-        <p>名前：<%= @message_content.name %></p>
-        <p>性別：<%= @message_content.sex %></p>
-        <p>気分：<%= @message_content.mood %></p>
-        <p>好きなタイプ：<%= @message_content.person_type %></p>
-        <p>【メッセージ】<br /><%= @message_content.content %></p>
-        <p>投稿：<%= l @message_content.created_at %></p>
-        <p>更新：<%= l @message_content.updated_at %></p>
-      </div>
+      <p>名前：<%= @message_content.name %></p>
+      <p>性別：<%= @message_content.sex %></p>
+      <p>気分：<%= @message_content.mood %></p>
+      <p>好きなタイプ：<%= @message_content.person_type %></p>
+      <p>【メッセージ】<br /><%= @message_content.content %></p>
+      <p>投稿：<%= l @message_content.created_at %></p>
+      <p>更新：<%= l @message_content.updated_at %></p>
 
       <div class="link_to_edit_btn">
-        <%= link_to "編集", edit_message_content_path(@message_content.id), class: "button is-info" %><br />
+        <%= link_to "編集", edit_message_content_path(@message_content.id), class: "button is-info" %>
       </div>
 
   </div>

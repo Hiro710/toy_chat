@@ -1,16 +1,29 @@
-version: '3'
 services:
   db:
-    image: postgres
+    image: postgres:16-alpine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
   web:
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    command: sh -c "rm -f tmp/pids/server.pid && bundle exec rails db:create db:migrate db:seed:replant && bundle exec rails dartsass:build && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/toy_chat_dk
     ports:
       - "3000:3000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+  css:
+    build: .
+    command: bundle exec rails dartsass:watch
+    volumes:
+      - .:/toy_chat_dk
+    depends_on:
+      db:
+        condition: service_healthy

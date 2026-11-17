@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,12 +14,16 @@
     <!--headerのパーシャルを追加する-->
     <%= render 'layouts/header' %>
     <!--flashメッセージ-->
-    <div class="flash-success">
-      <%= flash[:notice] %>
-    </div>
-    <div class="flash-danger">
-      <%= flash.now[:alert] %>
-    </div>
+    <% if flash[:notice].present? %>
+      <div class="flash-success">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert].present? %>
+      <div class="flash-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
     <%= yield %>
     <!--footerのパーシャルを追加する-->
     <%= render 'layouts/footer' %>

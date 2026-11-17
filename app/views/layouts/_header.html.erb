@@ -1,8 +1,7 @@
 <!--header-->
-<header class="has-background-primary-light navbar navbar-fixed-top navbar-inverse">
+<header class="has-background-primary-light navbar">
   <div class="container">
     <%= link_to  "TOYBOX", "https://nagoyatoybox2.x.2nt.com/index2.html", class: "logo", target: :_blank, rel: "noopener noreferrer" %>
-    <%= link_to "Admin", '#' %>
     <%= link_to "🔰初めての方へ", explanation_path %>
   </div>
 </header>
@@ -14,15 +13,6 @@
     初めて来店される方は事前に上部リンク「初めての方へ」をご覧下さい🔰
   </h3>
 </section>
-
-<!--
-<div>
-  <%= form_with url: message_contents_path, method: :get, local: true do |f| %>
-   <%= f.text_field :search, class: "input is-rounded header_menu_order_btns", type: "text", placeholder: "キーワードを入力して下さい"%>
-   <%= f.submit "検索", name: nil %>
-  <% end %>
-</div>
--->
 
 <div class="buttons header_btns_parent">
   <div>
@@ -41,9 +31,3 @@
     <%= link_to "投稿する", new_message_content_path, class: "button is-info header_btns_child" %>
   </div>
 </div>
-
-
-<!--
-  <%= link_to "新着順", message_contents_path(latest: "true") %>
-  <%= link_to "古い順", message_contents_path(old: "true") %>
--->
