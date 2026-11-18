@@ -2,15 +2,18 @@
 
 html {
   box-sizing: border-box;
-  color-scheme: light;
+  color-scheme: light only;
   background-color: #ffffff;
 }
 
 /* header */
 header {
   width: 100%;
-  margin: 5% 0;
+  margin: 0;
   display: flex;
+  padding-top: 0.9rem;
+  padding-bottom: 0.3rem;
+  min-height: unset;
 }
 
 /* headerの「重要事項」 */
