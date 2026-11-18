@@ -6,6 +6,14 @@
   <div>
     <%= form_with(model: @message_content, url: message_contents_path, local: true) do |f| %>
 
+      <% if @message_content.errors.any? %>
+        <div class="notification is-danger">
+          <% @message_content.errors.full_messages.each do |msg| %>
+            <p><%= msg %></p>
+          <% end %>
+        </div>
+      <% end %>
+
       <b class = "required_input">＊：必須項目</b>
       <!--名前-->
       <div class="input_field">
@@ -65,6 +73,16 @@
       <div class="input_textarea">
         <%= f.label :content, "【メッセージ】" %><b class = "required_input">＊（100文字まで）</b>
         <%= f.text_area :content, rows: 5, class: "textarea new_input_textarea", placeholder: "Hello, TOYBOX!" %>
+      </div>
+
+      <!--編集用パスワード-->
+      <div class="input_field">
+        <%= f.label :password, "編集用パスワード" %><b class="required_input">＊（4文字以上）</b>
+        <%= f.password_field :password, class: "input is-small", autocomplete: "new-password" %>
+      </div>
+      <div class="input_field">
+        <%= f.label :password_confirmation, "パスワード確認" %><b class="required_input">＊</b>
+        <%= f.password_field :password_confirmation, class: "input is-small", autocomplete: "new-password" %>
       </div>
 
       <div class="submit_btn">

@@ -1,0 +1,20 @@
+<h2 class="title">管理者ログイン</h2>
+<div class="box" style="max-width: 400px;">
+  <%= form_with url: admin_session_path, method: :post, local: true do |f| %>
+    <div class="field">
+      <label class="label">ユーザー名</label>
+      <div class="control">
+        <%= text_field_tag :username, nil, class: "input", autocomplete: "username" %>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">パスワード</label>
+      <div class="control">
+        <%= password_field_tag :password, nil, class: "input", autocomplete: "current-password" %>
+      </div>
+    </div>
+    <div class="field">
+      <%= submit_tag "ログイン", class: "button is-dark is-fullwidth" %>
+    </div>
+  <% end %>
+</div>

@@ -1,13 +1,15 @@
 class MainPagesController < ApplicationController
   def home
-    # @message_contents = MessageContent.all
+    @message_contents = base_query.search(params[:q]).page(params[:page]).per(100)
+  end
 
-    if params[:latest]
-      @message_contents = MessageContent.latest
-    elsif params[:old]
-      @message_contents = MessageContent.old
+  private
+
+  def base_query
+    if params[:old]
+      MessageContent.old
     else
-      @message_contents = MessageContent.latest
+      MessageContent.latest
     end
   end
 end

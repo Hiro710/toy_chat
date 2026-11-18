@@ -33,6 +33,16 @@ header {
   }
 }
 
+/* headerの検索フォーム */
+.search_form {
+  margin-left: 2.5%;
+  margin-bottom: 1rem;
+
+  input[type="text"] {
+    max-width: 280px;
+  }
+}
+
 /* newビュー全体(h1タイトルより下)のレイアウト */
 .new_post {
   margin: 10%;

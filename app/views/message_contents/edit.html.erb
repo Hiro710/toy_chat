@@ -1,4 +1,12 @@
 <h1 class="subtitle title_bold">投稿の編集</h1>
+
+<% if @message_content.errors.any? %>
+  <div class="notification is-danger">
+    <% @message_content.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
 <!-- url: "/message_contents/#{@message_content.id}" -->
 <%= form_with(model: @message_content, url: "/message_contents/#{@message_content.id}", local: true) do |f| %>
       <div class="input_field">

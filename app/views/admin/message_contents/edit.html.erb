@@ -1,0 +1,48 @@
+<h2 class="subtitle title_bold">投稿の編集（管理者）</h2>
+
+<% if @message_content.errors.any? %>
+  <div class="notification is-danger">
+    <% @message_content.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_with model: [:admin, @message_content], local: true do |f| %>
+  <div class="input_field">
+    <%= f.label :name, "名前" %>：
+    <%= f.text_field :name, class: "input is-small" %>
+    <b>（20文字まで）</b>
+  </div>
+
+  <div class="input_field">
+    <%= f.label :sex, "性別" %>：
+    <div class="select is-small">
+      <%= f.select :sex, @category_sex, {}, { id: "category_sex" } %>
+    </div>
+  </div>
+
+  <div class="input_field">
+    <%= f.label :mood, "気分" %>：
+    <div class="select is-small">
+      <%= f.select :mood, @category_mood, {}, { id: "category_mood" } %>
+    </div>
+  </div>
+
+  <div class="input_field">
+    <%= f.label :person_type, "好きなタイプ" %>：
+    <div class="select is-small">
+      <%= f.select :person_type, @category_person_type, {}, { id: "category_person_type" } %>
+    </div>
+  </div>
+
+  <div class="input_textarea">
+    <%= f.label :content, "【メッセージ】" %><b>（100文字まで）</b>
+    <%= f.text_area :content, rows: 5, class: "textarea" %>
+  </div>
+
+  <div class="submit_btn">
+    <%= link_to "戻る", admin_message_contents_path, class: "button back_btn" %>
+    <%= f.submit "更新", class: "button is-info" %>
+  </div>
+<% end %>

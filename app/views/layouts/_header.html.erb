@@ -34,3 +34,23 @@
     <%= link_to "投稿する", new_message_content_path, class: "button is-info header_btns_child" %>
   </div>
 </div>
+
+<!--キーワード検索フォーム-->
+<div class="search_form">
+  <%= form_with url: message_contents_path, method: :get, local: true do |f| %>
+    <div class="field has-addons">
+      <div class="control">
+        <%= f.text_field :q, value: params[:q], class: "input is-small",
+                         placeholder: "名前・メッセージで検索" %>
+      </div>
+      <div class="control">
+        <%= f.submit "検索", class: "button is-info is-small" %>
+      </div>
+      <% if params[:q].present? %>
+        <div class="control">
+          <%= link_to "クリア", message_contents_path, class: "button is-small" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,49 @@
+<h2 class="title">投稿管理</h2>
+
+<%= form_with url: admin_message_contents_path, method: :get, local: true do |f| %>
+  <div class="field has-addons mb-4">
+    <div class="control">
+      <%= f.text_field :q, value: params[:q], class: "input is-small", placeholder: "名前・メッセージで検索" %>
+    </div>
+    <div class="control">
+      <%= f.submit "検索", class: "button is-dark is-small" %>
+    </div>
+    <% if params[:q].present? %>
+      <div class="control">
+        <%= link_to "クリア", admin_message_contents_path, class: "button is-small" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<table class="table is-fullwidth is-striped is-hoverable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>名前</th>
+      <th>内容</th>
+      <th>投稿日時</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @message_contents.each do |post| %>
+      <tr>
+        <td><%= post.id %></td>
+        <td><%= post.name %></td>
+        <td><%= truncate(post.content, length: 40) %></td>
+        <td><%= l post.created_at %></td>
+        <td>
+          <%= link_to "編集", edit_admin_message_content_path(post), class: "button is-info is-small" %>
+          <%= button_to "削除", admin_message_content_path(post), method: :delete,
+                        class: "button is-danger is-small",
+                        form: { data: { turbo_confirm: "本当に削除しますか？" } } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="pagination_nav">
+  <%= paginate @message_contents %>
+</div>

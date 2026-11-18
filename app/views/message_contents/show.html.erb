@@ -11,7 +11,11 @@
       <p>更新：<%= l @message_content.updated_at %></p>
 
       <div class="link_to_edit_btn">
-        <%= link_to "編集", edit_message_content_path(@message_content.id), class: "button is-info" %>
+        <% if @message_content.password_digest.present? && !post_verified?(@message_content.id) %>
+          <%= link_to "編集", new_message_content_password_verification_path(@message_content), class: "button is-info" %>
+        <% else %>
+          <%= link_to "編集", edit_message_content_path(@message_content.id), class: "button is-info" %>
+        <% end %>
       </div>
 
   </div>

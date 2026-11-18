@@ -1,23 +1,21 @@
 class MessageContent < ApplicationRecord
-  # name, sex, mood, person_type, content属性の検証：各指定文字数未満であること
-  # name, sex, contentが空でない事(presence: true)
+  has_secure_password validations: false
+
   validates :name,    presence: true, length: { maximum: 20 }
   validates :sex,     presence: true
   validates :mood,    length: { maximum: 10 }
   validates :person_type,   length: { maximum: 10 }
-  validates :content, presence: true, length: { maximum: 100 } # 本文は100文字まで入力可
+  validates :content, presence: true, length: { maximum: 100 }
+  validates :password,              presence: true, length: { minimum: 4, maximum: 72 }, on: :create
+  validates :password_confirmation, presence: true, on: :create
 
-  # オリジナルの検証用メソッド(バリデーション)を追加
   validate :validate_name_not_including_comma
 
-  # 並べ替え：投稿の新着順(desc)・古い順(asc)
-  # 投稿の作成時間を基準にしている
   scope :latest, -> { order(created_at: :desc) }
   scope :old, -> { order(created_at: :asc) }
-
+  scope :search, ->(q) { where("name LIKE :q OR content LIKE :q", q: "%#{q}%") if q.present? }
 
   private
-    # nameがnilの場合に例外が発生しないように&.include?としている
     def validate_name_not_including_comma
       errors.add(:name, 'にカンマを含めることはできません') if name&.include?(',')
     end

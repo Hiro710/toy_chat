@@ -59,3 +59,6 @@ gem "bulma-rails", "~> 1.0"
 
 # Use postgresql as the database for Active Record (all environments)
 gem "pg", "~> 1.1"
+
+gem "bcrypt", "~> 3.1"
+gem "kaminari"

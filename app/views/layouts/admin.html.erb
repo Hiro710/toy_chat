@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>管理者ページ - TOYBOX</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <nav class="navbar has-background-dark px-4 py-2">
+      <div class="navbar-brand">
+        <span class="has-text-white has-text-weight-bold">TOYBOX 管理者ページ</span>
+      </div>
+      <% if admin_logged_in? %>
+        <div class="navbar-end" style="display:flex; align-items:center; gap:0.5rem;">
+          <%= link_to "投稿管理", admin_message_contents_path, class: "button is-small is-light" %>
+          <%= button_to "ログアウト", admin_session_path, method: :delete,
+                        class: "button is-small is-danger",
+                        form: { data: { turbo_confirm: "ログアウトしますか？" } } %>
+        </div>
+      <% end %>
+    </nav>
+
+    <% if flash[:notice].present? %>
+      <div class="flash-success"><%= flash[:notice] %></div>
+    <% end %>
+    <% if flash[:alert].present? %>
+      <div class="flash-danger"><%= flash[:alert] %></div>
+    <% end %>
+
+    <section class="section">
+      <%= yield %>
+    </section>
+  </body>
+</html>

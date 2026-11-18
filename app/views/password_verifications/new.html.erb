@@ -1,0 +1,20 @@
+<div class="new_post">
+  <h1 class="title">パスワード確認</h1>
+  <div class="box" style="max-width: 480px;">
+    <p class="mb-4">この投稿を編集するには、投稿時に設定したパスワードが必要です。</p>
+
+    <%= form_with url: message_content_password_verification_path(@post),
+                  method: :post, local: true do |f| %>
+      <div class="input_field">
+        <label class="label">編集用パスワード</label>
+        <%= password_field_tag :password, nil, class: "input is-small",
+                               placeholder: "投稿時のパスワード",
+                               autocomplete: "current-password" %>
+      </div>
+      <div class="submit_btn">
+        <%= submit_tag "確認する", class: "button is-info" %>
+        <%= link_to "戻る", :back, class: "button back_btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
