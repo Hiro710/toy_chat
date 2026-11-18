@@ -25,7 +25,8 @@ class MessageContentsController < ApplicationController
     # 投稿に成功：一覧へリダイレクト、投稿失敗：新規投稿フォームを再表示
     if @message_content.save
       flash[:notice] = "投稿完了"
-      redirect_to @message_content
+      # redirect_to @message_content
+      redirect_to message_contents_path
     else
       flash.now[:alert] = "投稿に失敗しました"
       @message_contents = MessageContent.all

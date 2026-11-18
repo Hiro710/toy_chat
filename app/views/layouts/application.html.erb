@@ -16,12 +16,12 @@
     <!--flashメッセージ-->
     <% if flash[:notice].present? %>
       <div class="flash-success">
-        <%= flash[:notice] %>
+        <%= flash.now[:notice] %>
       </div>
     <% end %>
     <% if flash[:alert].present? %>
       <div class="flash-danger">
-        <%= flash[:alert] %>
+        <%= flash.now[:alert] %>
       </div>
     <% end %>
     <%= yield %>
